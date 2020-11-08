@@ -29,7 +29,7 @@ namespace SensorApp.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             //hello
-            //
+            //test comment pull from develop to matus
         }
     }
 }
