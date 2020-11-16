@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -90,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SensorApp\SensorApp.csproj">
-      <Project>{D665DBC1-648B-465F-9DD9-8E0B350895D1}</Project>
+      <Project>{A4DFE6D6-303C-4D5C-B7C3-6D3E7AEFB2E0}</Project>
       <Name>SensorApp</Name>
     </ProjectReference>
   </ItemGroup>

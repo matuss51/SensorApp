@@ -1,21 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SensorApp.ViewModels;
+using SensorApp.Models;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace SensorApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+        }
+
+        void Init()
+        {
+            BackgroundColor = Constants.BackgroundColor;
+            Lbl_username.TextColor = Constants.MainTextColor;
+            Lbl_password.TextColor = Constants.MainTextColor;
+            ActivitySpinner.IsVisible = false;
+
+            LoginIcon.HeightRequest = Constants.LoginIconHeight;
+
+            Entry_username.Completed += (s, e) => Entry_password.Focus();
+            Entry_password.Completed += (s, e) => SignInProcedure(s, e);
+        }
+
+        void SignInProcedure(object sender, EventArgs e) {
+            User user = new User(Entry_username.Text, Entry_password.Text);
+            if (user.checkInformation()) {
+                DisplayAlert("Login", "Login success", "Ok");
+            }
+            else
+            {
+                DisplayAlert("Login", "Login not correct, username or password is empty", "NOk");
+            }
         }
     }
 }
