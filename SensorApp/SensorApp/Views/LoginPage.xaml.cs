@@ -10,6 +10,7 @@ namespace SensorApp.Views
         public LoginPage()
         {
             InitializeComponent();
+            Init();
         }
 
         void Init()
